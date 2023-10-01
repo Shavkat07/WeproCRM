@@ -4,12 +4,10 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 from config.routers import DefaultRouter
-from category.urls import router as category_router
 from service.urls import router as service_router
 from users.urls import router as users_router
 
 router = DefaultRouter()
-router.extend(category_router)
 router.extend(service_router)
 router.extend(users_router)
 
