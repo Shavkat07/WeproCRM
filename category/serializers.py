@@ -4,7 +4,7 @@ from service.serializers import ServiceSerializer
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    service = ServiceSerializer(many=True)
+    service = ServiceSerializer(many=True, read_only=True)
 
     class Meta:
         model = Category
