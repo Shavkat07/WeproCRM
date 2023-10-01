@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     # 'allauth.account',
 
     # 'dj_rest_auth',
-    # 'rest_framework.authtoken'
+    'rest_framework.authtoken'
 ]
 
 SITE_ID = 1
@@ -68,7 +68,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "allauth.account.middleware.AccountMiddleware"
 ]
 
 ROOT_URLCONF = 'config.urls'
