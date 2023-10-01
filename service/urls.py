@@ -1,10 +1,11 @@
-from django.urls import path
-from . import views
+
+from rest_framework.routers import SimpleRouter
+
+from .views import ServiceViewSet
+
+router = SimpleRouter()
+router.register('service', ServiceViewSet)
 
 urlpatterns = [
-    # Добавить URL для списка услуг
-    path('services/', views.ServiceListView.as_view(), name='service-list'),
 
-    # Добавить URL для деталей конкретной услуги по ее ID
-    path('services/<int:pk>/', views.ServiceDetailView.as_view(), name='service-detail'),
 ]

@@ -1,8 +1,7 @@
-from django.contrib.auth.models import User
 from django.db import models
 from category.models import *
 
-moe = User.objects.all()
+
 
 
 class Service(models.Model):
@@ -10,3 +9,6 @@ class Service(models.Model):
     name = models.CharField(max_length=255)  # Backend
     stack = models.CharField(max_length=255)  # Python
     description = models.TextField()
+
+    def __str__(self):
+        return f'{self.name}'
