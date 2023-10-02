@@ -10,5 +10,5 @@ class CustomUser(AbstractUser):
     objects = UserManager()
     USERNAME_FIELD = 'username'
 
-    def str(self):
+    def __str__(self):
         return self.username

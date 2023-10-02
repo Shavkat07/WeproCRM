@@ -1,10 +1,11 @@
+from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
 from .models import CustomUser
 from rest_framework.validators import ValidationError
 from rest_framework.authtoken.models import Token
 
 
-class SignUpSerializer(serializers.ModelSerializer):
+class CustomUserSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=50)
     first_name = serializers.CharField(max_length=50)
     last_name = serializers.CharField(max_length=50)
@@ -38,3 +39,4 @@ class SignUpSerializer(serializers.ModelSerializer):
         user.save()
         Token.objects.create(user=user)
         return user
+
