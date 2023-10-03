@@ -10,7 +10,6 @@ from service.urls import router as service_router
 router = DefaultRouter()
 router.extend(service_router)
 
-
 schema_view = get_schema_view(
     openapi.Info(
         title="WeproCRM",
