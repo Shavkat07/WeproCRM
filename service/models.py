@@ -4,6 +4,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=355)  # Web Developing
     description = models.TextField(null=True, blank=True)  # asdfasfasdfasdf
+    image = models.ImageField(upload_to='categories/', null=True, blank=True)
 
     def __str__(self):
         return f'{self.name}'
@@ -17,3 +18,11 @@ class Service(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+
+class ServiceImages(models.Model):
+    service = models.ForeignKey(Service, on_delete=models.PROTECT)
+    image = models.ImageField(upload_to='service/', null=True, blank=True)
+
+    def __str__(self):
+        return f'Image for {self.service}'

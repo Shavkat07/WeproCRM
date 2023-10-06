@@ -1,6 +1,6 @@
 from django.contrib import admin
+from service.models import Category, Service, ServiceImages
 
-from service.models import Category, Service
 
 
 @admin.register(Category)
@@ -14,3 +14,5 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ['name', 'stack', 'category']
     search_fields = ['stack', 'name', 'category__name']
 
+
+admin.site.register(ServiceImages)

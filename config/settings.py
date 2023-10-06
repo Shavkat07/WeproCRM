@@ -15,6 +15,7 @@ from pathlib import Path
 import dj_database_url
 from decouple import config
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,15 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'service',
-    # 'category',
     'users',
 
     'rest_framework',
     'drf_yasg',
-    'dj_rest_auth.registration',
+    # 'dj_rest_auth.registration',
     'allauth',
     'allauth.account',
-
+    # 'allauth.socialaccount',
     'dj_rest_auth',
     'rest_framework.authtoken'
 ]
@@ -63,6 +63,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
 
     ]
+}
+
+
+REST_AUTH = {
+    'USER_DETAILS_SERIALIZER': 'users.serializers.UserDetailSerializer'
 }
 
 MIDDLEWARE = [
@@ -105,6 +110,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {
     "default": dj_database_url.parse(config('DATABASE_URL'))
 }
@@ -133,7 +139,7 @@ EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_USE_SSL = config("EMAIL_USE_SSL")
 
-# DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -151,6 +157,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
+MEDIA_ROOT = 'media/'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 

@@ -9,6 +9,8 @@ dj-rest-auth==5.0.1
 Django==4.2.5
 django-allauth==0.57.0
 django-jazzmin==2.6.0
+django-parler==2.3
+django-parler-rest==2.2
 djangorestframework==3.14.0
 drf-yasg==1.21.7
 gunicorn==21.2.0
