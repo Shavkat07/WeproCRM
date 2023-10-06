@@ -6,7 +6,7 @@ from .models import Service, Category, ServiceImages
 class ServiceImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceImages
-        fields = ('image',)
+        fields = ('service', 'image',)
 
 
 class ServiceSerializer(serializers.ModelSerializer):
