@@ -1,12 +1,12 @@
-
 from rest_framework.routers import SimpleRouter
 
-from .views import ServiceViewSet, CategoryViewSet
+from .views import ServiceViewSet, CategoryViewSet, ServiceImageViewSet
+
 
 router = SimpleRouter()
-router.register('service', ServiceViewSet)
 router.register('categories', CategoryViewSet)
-
+router.register('service', ServiceViewSet)
+router.register('service_images', ServiceImageViewSet)
 urlpatterns = [
 
 ]
