@@ -2,8 +2,12 @@
 .env
 db.sqlite3
 users/__pycache__/
+users/migrations/__pycache__/
 config/__pycache__/
 service/__pycache__
-users/migrations/__pycache__/
 service/migrations/__pycache__/
+chat/migrations/__pycache__/
 /media/
+chat/__pycache__/
+
+
